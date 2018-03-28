@@ -1,3 +1,3 @@
 #Lectures
 
-[Greedy](/greedy.html)
+[Greedy](/school/greedy.html)
