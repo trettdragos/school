@@ -8,7 +8,7 @@ Alg pleaca de la o multime A si trebuie sa construiasca o submultime B al lui A 
 - se iau pe rand elemente din A si se verifica daca din elementul curent adaugat la B conduce la solutia optima
 - daca conduce atunci elementul este adaugat definitiv la B. Algoritmul nu se razgandeste asupra deciziei luate
 
-####Exemplu
+####Exemplu 1
 
 Se citeste o multime cu n numere reale, identificati o sublumtime a multimii date de suma maxima.
 

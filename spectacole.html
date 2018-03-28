@@ -1014,6 +1014,74 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>index</title></head><body><article class="markdown-body"><h1 id="lectures"><a name="user-content-lectures" href="#lectures" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lectures</h1>
-<p><a href="/school/greedy.html">Greedy</a><br />
-<a href="/school/spectacole.html">Prb Spectacolelor</a></p></article></body></html>
+</style><title>spectacole</title></head><body><article class="markdown-body"><h1 id="problema-spectacolelor"><a name="user-content-problema-spectacolelor" href="#problema-spectacolelor" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Problema spectacolelor</h1>
+<p>Se dau:<br />
+- n spectacole cu nume si interval de desfasurare(hh:mm-hh:mm)<br />
+Se cere:<br />
+- planificarea unui nr maxim de spectacole intr-o zi astfel incat sa nu se suprapuna</p>
+<h4 id="exemplu"><a name="user-content-exemplu" href="#exemplu" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exemplu</h4>
+<p>12:30-16:30 Primavara<br />
+15:00-18:00 Vara<br />
+10:00-18:30 Toamna<br />
+18:10-20:45 Iarna<br />
+12:15-13:00 Anotimpuri</p>
+<h4 id="rezolvare"><a name="user-content-rezolvare" href="#rezolvare" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Rezolvare</h4>
+<ul>
+<li>sortam credcator spectacolele dupa ora de terminare</li>
+<li>primul sp planif este cel care se termina mai repede</li>
+<li>parcurgem restul sp si planificam acele spectacole care au proprietatea ca ora la care incepe &gt; ora la care se termina ultimul spectacol planificat</li>
+</ul>
+<h5 id="afisare"><a name="user-content-afisare" href="#afisare" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Afisare</h5>
+<p>12:15-13:00 Anotimpuri<br />
+12:30-16:30 Primavara<br />
+15:00-18:00 Vara<br />
+10:00-18:30 Toamna<br />
+18:10-20:45 Iarna</p>
+<pre><code>int n;
+struct spectacol{
+    char nume[20];
+    int m1,m2;
+}a[100];
+
+void sortare(){
+    for (int i = 0; i &lt; n-1; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            if(a[i].m2&gt;a[j].m2){
+                specatcol aux = a[i];
+                a[i]=a[j];
+                a[j]=aux;
+            }
+        }
+    }
+}
+
+void citire(){
+    freopen(&quot;date.in&quot;, &quot;r&quot;, stdin);
+    cin&gt;&gt;n;
+    int h1, m1, h2, m2;
+    for (int i = 0; i &lt; n; ++i)
+    {
+        cin&gt;&gt;h1&gt;&gt;m1&gt;&gt;h2&gt;&gt;m2;
+        m1 = 60*h1 + m1;
+        m2 = 60*h2 + m2;
+        a[i].m1=m1;
+        a[i].m2=m2;
+        cin.geline(a[i].nume);
+    }
+}
+
+void plan(){
+    cout&lt;&lt;a[0].nume;
+    int finisLast = a[0].m2;
+    for (int i = 1; i &lt; n; ++i)
+    {
+        if(a[i].m2&gt;x){
+            cout&lt;&lt;a[i].nume;
+            finishLast=a[i].m2;
+        }   
+    }
+}
+
+</code></pre></article></body></html>
