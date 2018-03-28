@@ -1014,6 +1014,69 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
+</style><style>/*github*/
+.codehilite {background-color:#fff;color:#333333;}
+.codehilite .hll {background-color:#ffffcc;}
+.codehilite .c{color:#999988;font-style:italic}
+.codehilite .err{color:#a61717;background-color:#e3d2d2}
+.codehilite .k{font-weight:bold}
+.codehilite .o{font-weight:bold}
+.codehilite .cm{color:#999988;font-style:italic}
+.codehilite .cp{color:#999999;font-weight:bold}
+.codehilite .c1{color:#999988;font-style:italic}
+.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
+.codehilite .gd{color:#000000;background-color:#ffdddd}
+.codehilite .ge{font-style:italic}
+.codehilite .gr{color:#aa0000}
+.codehilite .gh{color:#999999}
+.codehilite .gi{color:#000000;background-color:#ddffdd}
+.codehilite .go{color:#888888}
+.codehilite .gp{color:#555555}
+.codehilite .gs{font-weight:bold}
+.codehilite .gu{color:#800080;font-weight:bold}
+.codehilite .gt{color:#aa0000}
+.codehilite .kc{font-weight:bold}
+.codehilite .kd{font-weight:bold}
+.codehilite .kn{font-weight:bold}
+.codehilite .kp{font-weight:bold}
+.codehilite .kr{font-weight:bold}
+.codehilite .kt{color:#445588;font-weight:bold}
+.codehilite .m{color:#009999}
+.codehilite .s{color:#dd1144}
+.codehilite .n{color:#333333}
+.codehilite .na{color:teal}
+.codehilite .nb{color:#0086b3}
+.codehilite .nc{color:#445588;font-weight:bold}
+.codehilite .no{color:teal}
+.codehilite .ni{color:purple}
+.codehilite .ne{color:#990000;font-weight:bold}
+.codehilite .nf{color:#990000;font-weight:bold}
+.codehilite .nn{color:#555555}
+.codehilite .nt{color:navy}
+.codehilite .nv{color:teal}
+.codehilite .ow{font-weight:bold}
+.codehilite .w{color:#bbbbbb}
+.codehilite .mf{color:#009999}
+.codehilite .mh{color:#009999}
+.codehilite .mi{color:#009999}
+.codehilite .mo{color:#009999}
+.codehilite .sb{color:#dd1144}
+.codehilite .sc{color:#dd1144}
+.codehilite .sd{color:#dd1144}
+.codehilite .s2{color:#dd1144}
+.codehilite .se{color:#dd1144}
+.codehilite .sh{color:#dd1144}
+.codehilite .si{color:#dd1144}
+.codehilite .sx{color:#dd1144}
+.codehilite .sr{color:#009926}
+.codehilite .s1{color:#dd1144}
+.codehilite .ss{color:#990073}
+.codehilite .bp{color:#999999}
+.codehilite .vc{color:teal}
+.codehilite .vg{color:teal}
+.codehilite .vi{color:teal}
+.codehilite .il{color:#009999}
+.codehilite .gc{color:#999;background-color:#EAF2F5}
 </style><title>greedy</title></head><body><article class="markdown-body"><h1 id="greedy"><a name="user-content-greedy" href="#greedy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Greedy</h1>
 <p>Metoda de elaborare a algoritmilor in care se cere solutia optima.</p>
 <p>Alg pleaca de la o multime A si trebuie sa construiasca o submultime B al lui A care sa indeplineasca criteiile de optim. Constructia submultimii B se face astfel</p>
@@ -1022,29 +1085,30 @@ body .markdown-body
 <li>se iau pe rand elemente din A si se verifica daca din elementul curent adaugat la B conduce la solutia optima</li>
 <li>daca conduce atunci elementul este adaugat definitiv la B. Algoritmul nu se razgandeste asupra deciziei luate</li>
 </ul>
-<h4 id="exemplu"><a name="user-content-exemplu" href="#exemplu" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exemplu</h4>
+<h4 id="exemplu-1"><a name="user-content-exemplu-1" href="#exemplu-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exemplu 1</h4>
 <p>Se citeste o multime cu n numere reale, identificati o sublumtime a multimii date de suma maxima.</p>
 <p>A={10, 7, -9, -4, 8, 2}<br />
 B={10, 7, 8, 2}</p>
 <p>A={-10, -7, -9, -4, -8, -2}<br />
 B={-2}</p>
-<pre><code>int main(){
-    int n, minim = -9999999, x, s;
-    cin&gt;&gt;n;
-    for(int i=0; i&lt;n; i++){
-        cin&gt;&gt;x;
-        if(x&gt;=0){
-            cout&lt;&lt;x;
-            s+=x;
-        }else if(mimnim&lt;x){
-            minim=x;
-        }
-    }
-    if(s)
-        cout&lt;&lt;endl&lt;&lt;s;
-    else cout&lt;&lt;minim;
-}
-</code></pre>
+<div class="codehilite"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">minim</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999999</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">){</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="p">;</span>
+            <span class="n">s</span><span class="o">+=</span><span class="n">x</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">mimnim</span><span class="o">&lt;</span><span class="n">x</span><span class="p">){</span>
+            <span class="n">minim</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">;</span>
+    <span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">minim</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <h4 id="exemplu-2"><a name="user-content-exemplu-2" href="#exemplu-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exemplu 2</h4>
 <p>Se citesc 2 multimi cu elemente nenule.<br />
@@ -1052,44 +1116,45 @@ A cu n elemente, B cu m elemente; n&lt;=m<br />
 Sa se determine o submultime X al lui B care sa maximizeze valoarea expresiei <code>a1*X1+a2*X2+.....+an*Xn</code></p>
 <p>A={9, 10, -8, -4}<br />
 B={2, 3, 11, 1, -8}<br />
-<pre><code>E2 = 9*2+10*3+(-8)*11+(-4)*1 = -44
+<div class="codehilite"><pre>E2 = 9*2+10*3+(-8)*11+(-4)*1 = -44
 E3 = 10*11+9*3+(-8)*(-8)+(-4)*1 = 110+27+64-4 = 137+60 = 197 
-</code></pre><br />
+</pre></div>
+<br />
 A crescator: A = {-8, -4, 9, 10}<br />
 B crescator: B = {-8, 1, 2, 3, 11}</p>
-<pre><code>int n, m, a[100], b[100];
+<div class="codehilite"><pre><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 
-void ordonare(int a[], int n){
-    for(int i=0; i&lt;n-1; i++)
-    for(int j=i+1; j&lt;n; j++){
-        if(a[i]&gt;a[j]){
-            int aux = a[i];
-            a[i]=a[j];
-            a[j]=aux;
-        }
-    }
-}
+<span class="kt">void</span> <span class="nf">ordonare</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+            <span class="kt">int</span> <span class="n">aux</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">aux</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-void expresie(){
-    ordonare(a, n);
-    ordonare(b. m);
-    int e = 0;
-    int i = 0;
-    while(i&lt;n &amp;&amp; a[i]&lt;0){
-        e = e+a[i]*b[i];
-        i++;
-    }
-    int j = n-1, k=m-1;
-    while(j&gt;=i){
-        e = e+a[j]*b[k];
-        j--;
-        k--;
-    }
-    cout&lt;&lt;e;
-}
+<span class="kt">void</span> <span class="nf">expresie</span><span class="p">(){</span>
+    <span class="n">ordonare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="n">ordonare</span><span class="p">(</span><span class="n">b</span><span class="p">.</span> <span class="n">m</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">e</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">){</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&gt;=</span><span class="n">i</span><span class="p">){</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+        <span class="n">j</span><span class="o">--</span><span class="p">;</span>
+        <span class="n">k</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">e</span><span class="p">;</span>
+<span class="p">}</span>
 
-int main(){
-    citire();
-    expresie();
-}
-</code></pre></article></body></html>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">citire</span><span class="p">();</span>
+    <span class="n">expresie</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div></article></body></html>

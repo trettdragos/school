@@ -25,7 +25,7 @@ Se cere:
 18:10-20:45 Iarna
 
 
-```
+```c++
 int n;
 struct spectacol{
 	char nume[20];
