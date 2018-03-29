@@ -24,7 +24,8 @@ void citire(){
 	ifstream f("date.in");
 	f>>n;
 	for(int i=1; i<=n; i++){
-		f>>a[i].nr>>a[i].timp;
+		f>>a[i].timp;
+		a[i].nr = i;
 	}
 }
 
