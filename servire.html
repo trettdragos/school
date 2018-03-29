@@ -1077,7 +1077,55 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>index</title></head><body><article class="markdown-body"><h1 id="lectures"><a name="user-content-lectures" href="#lectures" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lectures</h1>
-<p><a href="/school/greedy.html">Greedy</a><br />
-<a href="/school/spectacole.html">Prb Spectacolelor</a><br />
-<a href="/school/rucsacul.html">Rucsacul</a></p></article></body></html>
+</style><title>servire</title></head><body><article class="markdown-body"><h1 id="timp-minim-de-servire"><a name="user-content-timp-minim-de-servire" href="#timp-minim-de-servire" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timp minim de servire</h1>
+<p>Un restaurant satisface cererile a n clientii. Pentru fiecare client se cunoaste timpul de servire. Se cere sa se minimizeze timpul total de servire a acelor n clienti</p>
+<h4 id="exemplu"><a name="user-content-exemplu" href="#exemplu" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exemplu</h4>
+<p>n=3<br />
+T=(7, 3, 5)</p>
+<p>Timpul de asteptare al clientului i: T1+T2++&hellip;+Ti</p>
+<p>Ordinea 1 2 3 =&gt; 7 + (7+3) + (7+3+5)=32<br />
+132 =&gt; 7+(7+5)+(7+5+3)=34</p>
+<p>Timp minim: 2, 3, 1 =&gt;3+(3+5)+(3+5+7)=26</p>
+<div class="codehilite"><pre><span class="kt">int</span> <span class="n">n</span>
+<span class="k">struct</span> <span class="n">client</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">nr</span><span class="p">,</span> <span class="n">timp</span><span class="p">;</span>
+<span class="p">}</span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">citire</span><span class="p">(){</span>
+    <span class="n">ifstream</span> <span class="n">f</span><span class="p">(</span><span class="s">&quot;date.in&quot;</span><span class="p">);</span>
+    <span class="n">f</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">f</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nr</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">timp</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">sort</span><span class="p">(){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">timp</span><span class="o">&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">timp</span><span class="p">){</span>
+                <span class="n">client</span> <span class="n">auxiliar</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">auxiliar</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">preluc</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">totalTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">timeClienti</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">timpClinti</span><span class="o">=</span><span class="n">ti</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">timp</span><span class="p">;</span>
+        <span class="n">timpTotal</span><span class="o">+=</span><span class="n">timpClienti</span><span class="p">;</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nr</span><span class="p">;</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Timp total &quot;</span><span class="o">&lt;&lt;</span><span class="n">timpTotal</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">citire</span><span class="p">();</span>
+    <span class="n">sort</span><span class="p">();</span>
+    <span class="n">preluc</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div></article></body></html>

@@ -1014,4 +1014,135 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>rucsacul</title></head><body><article class="markdown-body"><h1 id="problema-rucsacului"><a name="user-content-problema-rucsacului" href="#problema-rucsacului" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Problema rucsacului</h1></article></body></html>
+</style><style>/*github*/
+.codehilite {background-color:#fff;color:#333333;}
+.codehilite .hll {background-color:#ffffcc;}
+.codehilite .c{color:#999988;font-style:italic}
+.codehilite .err{color:#a61717;background-color:#e3d2d2}
+.codehilite .k{font-weight:bold}
+.codehilite .o{font-weight:bold}
+.codehilite .cm{color:#999988;font-style:italic}
+.codehilite .cp{color:#999999;font-weight:bold}
+.codehilite .c1{color:#999988;font-style:italic}
+.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
+.codehilite .gd{color:#000000;background-color:#ffdddd}
+.codehilite .ge{font-style:italic}
+.codehilite .gr{color:#aa0000}
+.codehilite .gh{color:#999999}
+.codehilite .gi{color:#000000;background-color:#ddffdd}
+.codehilite .go{color:#888888}
+.codehilite .gp{color:#555555}
+.codehilite .gs{font-weight:bold}
+.codehilite .gu{color:#800080;font-weight:bold}
+.codehilite .gt{color:#aa0000}
+.codehilite .kc{font-weight:bold}
+.codehilite .kd{font-weight:bold}
+.codehilite .kn{font-weight:bold}
+.codehilite .kp{font-weight:bold}
+.codehilite .kr{font-weight:bold}
+.codehilite .kt{color:#445588;font-weight:bold}
+.codehilite .m{color:#009999}
+.codehilite .s{color:#dd1144}
+.codehilite .n{color:#333333}
+.codehilite .na{color:teal}
+.codehilite .nb{color:#0086b3}
+.codehilite .nc{color:#445588;font-weight:bold}
+.codehilite .no{color:teal}
+.codehilite .ni{color:purple}
+.codehilite .ne{color:#990000;font-weight:bold}
+.codehilite .nf{color:#990000;font-weight:bold}
+.codehilite .nn{color:#555555}
+.codehilite .nt{color:navy}
+.codehilite .nv{color:teal}
+.codehilite .ow{font-weight:bold}
+.codehilite .w{color:#bbbbbb}
+.codehilite .mf{color:#009999}
+.codehilite .mh{color:#009999}
+.codehilite .mi{color:#009999}
+.codehilite .mo{color:#009999}
+.codehilite .sb{color:#dd1144}
+.codehilite .sc{color:#dd1144}
+.codehilite .sd{color:#dd1144}
+.codehilite .s2{color:#dd1144}
+.codehilite .se{color:#dd1144}
+.codehilite .sh{color:#dd1144}
+.codehilite .si{color:#dd1144}
+.codehilite .sx{color:#dd1144}
+.codehilite .sr{color:#009926}
+.codehilite .s1{color:#dd1144}
+.codehilite .ss{color:#990073}
+.codehilite .bp{color:#999999}
+.codehilite .vc{color:teal}
+.codehilite .vg{color:teal}
+.codehilite .vi{color:teal}
+.codehilite .il{color:#009999}
+.codehilite .gc{color:#999;background-color:#EAF2F5}
+</style><title>rucsacul</title></head><body><article class="markdown-body"><h1 id="problema-rucsacului"><a name="user-content-problema-rucsacului" href="#problema-rucsacului" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Problema rucsacului</h1>
+<ul>
+<li>n obiecte cu greutate si castig</li>
+<li>avem rucsac cu greutate G cunoscut</li>
+</ul>
+<p>Aflsa castigul maxim obtinut prin transportuyl obiectelor date astfel incat sa nu depasesc capacitatea maxima a rucsacului si stiind ca putem fractiona obiectele</p>
+<h3 id="code-c"><a name="user-content-code-c" href="#code-c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code c++</h3>
+<div class="codehilite"><pre><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;string&gt;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">object</span><span class="p">{</span>
+    <span class="kt">float</span> <span class="n">val</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">g</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">ratio</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nr</span><span class="p">;</span>
+<span class="p">}</span><span class="n">obiecte</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">rucsac</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">citire</span><span class="p">(){</span>
+    <span class="n">freopen</span><span class="p">(</span><span class="s">&quot;date.in&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">rucsac</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">aux</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">;</span>
+        <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">val</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+        <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">g</span><span class="o">=</span><span class="n">y</span><span class="p">;</span>
+        <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ratio</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">;</span>
+        <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nr</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">sort</span><span class="p">(){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ratio</span><span class="o">&lt;</span><span class="n">obiecte</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">ratio</span><span class="p">){</span>
+                <span class="n">object</span> <span class="n">aux</span> <span class="o">=</span> <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">obiecte</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">obiecte</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">aux</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">prelucare</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">castig</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">rucsac</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">g</span><span class="o">&lt;=</span><span class="n">rucsac</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; 100% &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">castig</span> <span class="o">+=</span> <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
+            <span class="n">rucsac</span> <span class="o">-=</span> <span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">g</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">nr</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="o">&lt;&lt;</span><span class="n">rucsac</span><span class="o">*</span><span class="mf">100.0</span><span class="o">/</span><span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">g</span><span class="o">&lt;&lt;</span><span class="s">&quot;%&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+            <span class="n">castig</span><span class="o">+=</span><span class="n">obiecte</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ratio</span><span class="o">*</span><span class="n">rucsac</span><span class="p">;</span>
+            <span class="n">rucsac</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">citire</span><span class="p">();</span>
+    <span class="n">sort</span><span class="p">();</span>
+    <span class="n">prelucare</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></article></body></html>

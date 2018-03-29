@@ -1,0 +1,3 @@
+C:/Users/trett/Documents/GitHub/school/rucsacul/cmake-build-debug/CMakeFiles/rucsacul.dir
+C:/Users/trett/Documents/GitHub/school/rucsacul/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/trett/Documents/GitHub/school/rucsacul/cmake-build-debug/CMakeFiles/rebuild_cache.dir
