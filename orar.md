@@ -1,0 +1,9 @@
+||Luni|Marti|MIercuri|Joi|Vineri|
+|-|-|-|-|-|-|
+|8-8:45|Istorie|Fizica|Romana|Info|Info(L)|
+|8:50-9:35|Romana|Germana|Romana|Info|Info(T)|
+|9:40-10:25|Socio|Fizica|Mate|Info|Engleza|
+|10:30-11:15|Germana|Info(T)|Geografie|Mate|Info(T)|
+|11:20-12:05|Religie|Bilogie|Sport|Engleza|Mate|
+|12:10-12:55|Mate|Dirigentie|Chimie|Fizica|
+|13:00-13:45||||||
