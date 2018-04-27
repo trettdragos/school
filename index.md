@@ -9,4 +9,7 @@
 
 -----------
 
+##Arbori
+
 [Arbori](/school/arbori.html)
+[Arbori-continuare](/school/arboriBinariApl.html)
