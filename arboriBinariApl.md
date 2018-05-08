@@ -84,3 +84,31 @@ bool verif(char *s){
 }
 
 ```
+
+###Other exercise
+
+```c++
+char a[1000];
+
+struct nod{
+	char inf[31];
+	nod *st, *dr;
+}
+
+void preordine(nod *r){
+	if(r){
+		cout<<r->inf<<" ";
+		preordine(r->st);
+		preordine(r->dr);
+	}
+}
+
+void creare(nod 8&r, char *cuv){
+	if(strcmp(cuv, "*")==0){
+		r = NULL;
+	}else{
+		
+	}
+	cuv = strtok(a, ".!?,");
+}
+```
