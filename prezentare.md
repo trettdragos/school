@@ -20,3 +20,4 @@
 |16|Giroveanu Radu||
 |17|Corbos Adrian||
 |18|Teodora Chirila||
+|19|Galca Vlad||
