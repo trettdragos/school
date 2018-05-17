@@ -1070,7 +1070,7 @@ body .markdown-body
 </ul>
 <h2 id="prb">Prb<a class="headerlink" href="#prb" title="Permanent link"></a></h2>
 <p>SA se creeeze un ABC in care informatia utila usnt nr intregi cititte dintr-un fisier</p>
-<div class="highlight"><pre><span class="k">struct</span> <span class="n">nod</span><span class="p">{</span>
+<div class="codehilite"><pre><span class="k">struct</span> <span class="n">nod</span><span class="p">{</span>
     <span class="kt">int</span> <span class="n">inf</span><span class="p">;</span>
     <span class="n">nod</span> <span class="o">*</span><span class="n">st</span><span class="p">,</span> <span class="o">*</span><span class="n">dr</span><span class="p">;</span>
 <span class="p">}</span><span class="o">*</span><span class="n">rad</span><span class="p">;</span>
@@ -1105,7 +1105,7 @@ body .markdown-body
 </pre></div>
 
 <h2 id="parcurgerea-inordine">Parcurgerea inordine<a class="headerlink" href="#parcurgerea-inordine" title="Permanent link"></a></h2>
-<div class="highlight"><pre><span class="kt">void</span> <span class="nf">inordine</span><span class="p">(</span><span class="n">nod</span> <span class="o">*</span><span class="n">r</span><span class="p">){</span>
+<div class="codehilite"><pre><span class="kt">void</span> <span class="nf">inordine</span><span class="p">(</span><span class="n">nod</span> <span class="o">*</span><span class="n">r</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="p">){</span>
         <span class="n">inordine</span><span class="p">(</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">st</span><span class="p">);</span>
         <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">inf</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="p">;</span>
